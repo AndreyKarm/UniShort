@@ -94,33 +94,6 @@ public class BestTestGrade {
     }
 
     // method trans_to_string converts inputed number into a string so it could be displayed to the user.
-    public static String trans_to_str1(int answer){
-        if (answer == 1){
-            return "A+";
-        }
-        else if (answer == 2){
-            return "A";
-        }
-        else if (answer == 3){
-            return "B";
-        }
-        else if (answer == 4){
-            return "C";
-        }
-        else if (answer == 5){
-            return "D";
-        }
-        else if (answer == 6){
-            return "F";
-        }
-        else if (answer == 7){
-            return "G";
-        }
-        else{
-            return null;
-        }
-    }
-
     public static String trans_to_str(int answer){
         if (answer<8 || answer>1){
             String[] grades = new String[] {"A+", "A", "B", "C", "D", "F", "G"};

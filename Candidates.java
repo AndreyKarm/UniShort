@@ -7,7 +7,7 @@ class Candidate {
     String name;
     String party;
     int votes;
-}
+} // END Candidate
 
 public class Candidates {
     public static void main (String[] param){
@@ -16,39 +16,59 @@ public class Candidates {
         scanner.close();
     }   
 
-    // method Sequance makes all the logic 
-    public static void Sequance(Scanner scanner){
-        Candidate candidate1 = new Candidate(); // Questions for Candidate #1
-        Questions(scanner, candidate1);
-        Candidate candidate2 = new Candidate(); // Questions for Candidate #2
-        Questions(scanner, candidate2);
-        if(candidate1.votes >= candidate2.votes){ // Comparison of 2 candidates. if #1 has more votes, message gets outputted
-            System.out.println( candidate1.name + " of " + candidate1.party + " is declared the winner with " + candidate1.votes + " votes.");
-        }
-        else{ // Else Candidate #2 wins
-            System.out.println( candidate2.name + " of " + candidate2.party + " is declared the winner with " + candidate2.votes + " votes.");
-        }
-        System.out.println("They have a majority of " + (candidate1.votes+candidate2.votes));
-    }
-
-    // method Questions asks user questions about candidates 
-    public static void Questions(Scanner scanner, Candidate candidate){
-        System.out.println("What is the name of the first candidate?");
-        String name = scanner.nextLine();
-        System.out.println("What party did they stand for?");
-        String party = scanner.nextLine();
-        int votes = QuestionNumber(scanner, candidate);
-        creatCandidate(name, party, votes);
-    }
-
-    public static Candidate creatCandidate(String name, String party, int votes){
+    public static Candidate createCandidate(String name, String party, int votes){
         Candidate candidate = new Candidate();
         candidate.name = name;
         candidate.party = party;
         candidate.votes = votes;
-
         return candidate;
     }
+
+    // method Sequance makes all the logic 
+    public static void Sequance(Scanner scanner){
+        int candidateNumber = 1;
+        
+        Candidate candidate1 = new Candidate();
+        String[] a = Questions(scanner, candidate1, candidateNumber);
+        String name_a = a[0];
+        String party_a = a[1];
+        int votes_a = Integer.parseInt(a[2]);
+        createCandidate(name_a, party_a, votes_a);
+        candidateNumber++;
+
+        Candidate candidate2 = new Candidate();
+        String[] b = Questions(scanner, candidate2, candidateNumber);
+        String name_b = b[0];
+        String party_b = b[1];
+        int votes_b = Integer.parseInt(b[2]);
+        createCandidate(name_b, party_b, votes_b);
+
+        
+        if(votes_a >= votes_b){ // Comparison of 2 candidates. if #1 has more votes, message gets outputted
+            System.out.println( name_a + " of " + party_a + " is declared the winner with " + votes_a + " votes.");
+        }
+        else{ // Else Candidate #2 wins
+            System.out.println( name_b + " of " + party_b + " is declared the winner with " + votes_b + " votes.");
+        }
+        System.out.println("They have a majority of " + (votes_a+votes_b));
+    } // END Sequance
+
+    // method Questions asks user questions about candidates 
+    public static String[] Questions(Scanner scanner, Candidate candidate, int candidateNumber){
+        String plural;
+        if (candidateNumber == 1){
+            plural = "first";
+        }
+        else {
+            plural = "second";
+        }
+        System.out.println("What is the name of the " + plural + " candidate?");
+        String name = scanner.nextLine();
+        System.out.println("What party did they stand for?");
+        String party = scanner.nextLine();
+        String votes = Integer.toString(QuestionNumber(scanner, candidate));
+        return new String[]{name, party, votes};
+    } // END Questions
 
     // method QuestionNumber asks user for a number of votes and checks if the inputed value is a number
     public static int QuestionNumber(Scanner scanner, Candidate candidate){
@@ -60,11 +80,10 @@ public class Candidates {
         }
         else{ // Else asks user to try again
             System.out.println("Wrong input!");
-            QuestionNumber(scanner, candidate);
             int response = QuestionNumber(scanner, candidate);
             return response;
         }
-    }
+    } // END QuestionNumber
 
     // method isInteger checks if given number is integer, if yes returns true, else false.
     public static boolean isInteger(String input) {
@@ -72,5 +91,5 @@ public class Candidates {
         Matcher matcher = pattern.matcher(input);
         boolean result = matcher.find();
         return result;
-    }
+    } // isInteger
 }
