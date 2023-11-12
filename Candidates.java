@@ -72,16 +72,26 @@ public class Candidates {
 
     // method QuestionNumber asks user for a number of votes and checks if the inputed value is a number
     public static int QuestionNumber(Scanner scanner, Candidate candidate){
-        System.out.println("How many votes did they gain?");
+        String question = ("How many votes did they gain?");
+        System.out.println(question);
         String answer = scanner.nextLine();
         if (isInteger(answer)){ // If input is integer result gets returned
             int result = Integer.parseInt(answer);
             return result;
         }
         else{ // Else asks user to try again
-            System.out.println("Wrong input!");
-            int response = QuestionNumber(scanner, candidate);
-            return response;
+            while(true){
+                System.out.println("Wrong input!");
+                System.out.println(question);
+                String answerAgain = scanner.nextLine();
+                if (isInteger(answerAgain)){ // If input is integer result gets returned
+                    int result = Integer.parseInt(answerAgain);
+                    return result;
+                }
+                else{
+                    continue;
+                }
+            }
         }
     } // END QuestionNumber
 

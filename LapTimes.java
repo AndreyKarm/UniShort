@@ -6,14 +6,6 @@
 
 
    ****************************************/
-/* ***************************************
-  @author    Andrii Karmazinskyi
-  @SID       230978409
-  @date      31 October 2023
-  @version   1
-
-
-   ****************************************/
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
