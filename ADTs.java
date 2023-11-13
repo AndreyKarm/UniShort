@@ -11,7 +11,7 @@ class Restaurant{
 } // END Restaurant
 
 class ADTs{
-    // main creates scanner and closes
+    // main executes question() method with all logic, also creates scanner and closes
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Questions(scanner);
@@ -58,10 +58,26 @@ class ADTs{
         }
     } // END Questions
 
+    public static String getName(Restaurant rest){
+        return rest.name;
+    }
+
+    public static int getStepfree(Restaurant rest){
+        return rest.stepfree;
+    }
+
+    public static int getToilets(Restaurant rest){
+        return rest.toilets;
+    }
+
+    public static int getParking(Restaurant rest){
+        return rest.parking;
+    }
+
     // Result checks given info about restaurant and gives rating
     public static void Result(Restaurant rest){
         String rating;
-        int total_score = rest.stepfree + rest.toilets + rest.parking;
+        int total_score = getStepfree(rest) + getToilets(rest) + getParking(rest);
         if (total_score == 9){
             rating = "OUSTANDING";
         }
@@ -71,7 +87,7 @@ class ADTs{
         else{
             rating = "POOR";
         }
-        System.out.println(rest.name + " has a disability rating of " + rating + ".");
+        System.out.println(getName(rest) + " has a disability rating of " + rating + ".");
         return;
     } // END Result
 
