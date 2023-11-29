@@ -4,7 +4,7 @@ class tests{
     public static void main(String[] a) {
         Scanner scanner = new Scanner(System.in);
 
-        test5(scanner);
+        test8();
 
         scanner.close();
     }
@@ -125,5 +125,16 @@ class tests{
         while (ans.equals("y")){
             ans = inputString("Another? (y/n)", scanner);
         }
+    }
+
+    public static void test8(){
+        int[] a = { 1 };
+        int[] b = { 2 };
+        b = a;
+        System.out.println(a[0]);
+        System.out.println(b[0]);
+        a[0] = 5;
+        System.out.println(a[0]);
+        System.out.println(b[0]);
     }
 }
