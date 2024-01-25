@@ -1,5 +1,3 @@
-package ECS421U.week1;
-
 public class Question4 {
     public static void main(String args[]) {
         FSA A, A2 = null;
@@ -19,6 +17,17 @@ public class Question4 {
         System.out.println(A);
 
         // TODO: fill in this code
+
+        alphabet = new String[] { "a", "b", "c"};
+        delta = new Transition[] {
+                new Transition(0, "a", 1),
+                new Transition(1, "b", 2),
+                new Transition(2, "c", 2),
+                new Transition(2, "c", 0)
+        };
+        finals = new int[] { 0 };
+        A2 = new FSA(2, alphabet, delta, finals);
+
 
         // end of TODO part
         System.out.println(A2);

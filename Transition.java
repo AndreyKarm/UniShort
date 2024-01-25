@@ -1,5 +1,3 @@
-package ECS421U.week1;
-
 public class Transition {
     public int from;
     public String label;
