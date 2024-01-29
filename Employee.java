@@ -8,6 +8,11 @@ class Employee {
     }
 
     public Employee getDistrictManager() {
-
+        if (manager == null) {
+            return this;
+        }
+        else {
+            return manager.getDistrictManager();
+        }
     }
 }
