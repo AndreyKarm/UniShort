@@ -26,7 +26,7 @@ public class Question4 {
                 new Transition(2, "c", 0)
         };
         finals = new int[] { 0 };
-        A2 = new FSA(2, alphabet, delta, finals);
+        A2 = new FSA(3, alphabet, delta, finals);
 
 
         // end of TODO part

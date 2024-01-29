@@ -1,3 +1,4 @@
+package ECS421U.week1;
 import java.util.*;
 
 public class FSA {
