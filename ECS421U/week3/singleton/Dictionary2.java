@@ -13,6 +13,7 @@ public class Dictionary2 {
             instance = new Dictionary2();
         } else {
             System.out.println("This class is a singleton!");
+            return null;
         }
         return instance;
     }
@@ -30,5 +31,5 @@ public class Dictionary2 {
             }
         }
         return "Not Found.";
-    }   
+    }
 }
