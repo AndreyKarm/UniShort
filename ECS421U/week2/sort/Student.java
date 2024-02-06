@@ -23,13 +23,7 @@ class Student {
     for (int i = 0; i < s.length - 1; i++) {
         swapped = false;
         for (int j = 0; j < s.length - i - 1; j++) {
-            if (s[j].name.charAt(0) == s[j + 1].name.charAt(0)) {
-                if (s[j + 1].id < s[j].id) {
-                    Student temp = s[j];
-                    s[j] = s[j + 1];
-                    s[j + 1] = temp;
-                }
-            } else if (s[j].name.charAt(0) > s[j + 1].name.charAt(0)) {
+            if (s[j].name.compareTo(s[j + 1].name) > 0 || (s[j].name.equals(s[j + 1].name) && s[j].id > s[j + 1].id)) {
                 Student temp = s[j];
                 s[j] = s[j + 1];
                 s[j + 1] = temp;

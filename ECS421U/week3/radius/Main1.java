@@ -10,5 +10,7 @@ public class Main1 {
         System.out.println("The value of π is " + utils.PI); // 3.14
         System.out.println("The perimeter of your circle is " + utils.circlePerimeter(radius) + " units");
         System.out.println("The area of your circle is " + utils.circleArea(radius) + " square units");
+
+        scanner.close();
     }
 }

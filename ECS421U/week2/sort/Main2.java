@@ -5,7 +5,9 @@ public class Main2 {
                 new Student("John", 3),
                 new Student("Alice", 2),
                 new Student("Bob", 1),
-                new Student("Bob", 5)
+                new Student("Bob", 5),
+                new Student("Bill", 6),
+                new Student("Baa", 7)
         };
 
         Student.sortStudents(students);
