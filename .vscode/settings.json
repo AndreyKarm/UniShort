@@ -1,4 +1,5 @@
 {
     "git.useCommitInputAsStashMessage": false,
-    "git.useEditorAsCommitInput": true
+    "git.useEditorAsCommitInput": true,
+    "java.debug.settings.onBuildFailureProceed": true
 }
