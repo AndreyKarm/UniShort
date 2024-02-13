@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -44,34 +43,27 @@ public class Main {
         return new Animal[][] { dogs, cats };
     }
 
-    public static int[] countAnimalInstances(Animal[] animal) {
-        int[] animalArr = new int[0];
-        String[] animalArrNames = new String[0];
-        for(int x = 0; x < animal.length; x++) {
-            boolean found = false;
-            for(int y = 0; y < animalArr.length; y++) {
-                if ((animal[x].toString()).equals(animalArrNames[y])) {
-                    animalArr[y]++;
-                    found = true;
-                    break;
-                } 
-                
-            }
-            if (!found) {
-                animalArr = Arrays.copyOf(animalArr, animalArr.length + 1);
-                animalArrNames = Arrays.copyOf(animalArrNames, animalArrNames.length + 1);
-                animalArrNames[animalArrNames.length-1] = animal[x].toString();
-                animalArr[animalArr.length - 1]++;
+    public static void main(String[] args) {
+        Animal[] animals = populateArray(10);
+
+        Animal separatedAnimals[][] = separateArray(animals);
+
+        int dogCounter = 0;
+        int catCounter = 0;
+
+        for (Animal animal : separatedAnimals[0]) {
+            if (animal instanceof Dog) {
+                dogCounter++;
             }
         }
-        return animalArr;
-    }
 
-    public static void main(String[] args) {
-        Person person = new Person("David");
-        Student student = new Student("Brian", 19286);
+        for (Animal animal : separatedAnimals[1]) {
+            if (animal instanceof Cat) {
+                catCounter++;
+            }
+        }
 
-        System.out.println(person.printInfo());
-        System.out.println(student.printInfo());
+        System.out.println("Number of dogs: " + dogCounter);
+        System.out.println("Number of cats: " + catCounter);
     }
 }
