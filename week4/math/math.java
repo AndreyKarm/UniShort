@@ -1,6 +1,6 @@
 public class math {
     public static void main(String[] args) {
-        recurringFraction(1000);
+        recurringFraction(100000);
     }
 
     public static void recurringFraction(int searchZone) {
@@ -11,7 +11,6 @@ public class math {
             int remainder = 1;
             int[] remainders = new int[i];
             int position = 0;
-
             while (remainders[remainder] == 0 && remainder != 0) {
                 remainders[remainder] = position;
                 remainder = (remainder * 10) % i;

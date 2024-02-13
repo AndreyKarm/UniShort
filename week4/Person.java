@@ -6,6 +6,6 @@ public class Person {
     }
 
     public String printInfo() {
-        return name;
+        return "Hey, my name is " + name;
     }
 }

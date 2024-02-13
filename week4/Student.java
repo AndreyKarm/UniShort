@@ -7,6 +7,6 @@ public class Student extends Person {
     }
 
     @Override public String printInfo() {
-        return name + ", " + this.SID;
+        return "Hello, my name is " + name + ", " + this.SID;
     }
 }
