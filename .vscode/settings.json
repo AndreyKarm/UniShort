@@ -1,5 +1,9 @@
 {
     "git.useCommitInputAsStashMessage": false,
     "git.useEditorAsCommitInput": true,
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.outputPath": "bin"
 }
