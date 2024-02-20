@@ -3,7 +3,7 @@ public class ShapeDrawer1 extends Drawer implements SquareDrawer{
         super(i, c, d);
     }
 
-    public void drawSquare() {
+    public void drawSquare(int multiplier) {
         for (int i = 0; i < sideLength; i++) {
             for (int j = 0; j < sideLength; j++) {
                 System.out.print(filler);

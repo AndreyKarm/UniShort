@@ -1,4 +1,4 @@
 public interface SquareDrawer {
-    void drawSquare();
+    void drawSquare(int multiplier);
     void drawSpecialSquare();
 }
